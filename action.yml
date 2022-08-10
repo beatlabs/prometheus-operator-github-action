@@ -1,0 +1,30 @@
+---
+name: 'Prometheus Operator (Lint) Github Action'
+description: 'Run po-lint (linting) against PrometheusRules CRDs'
+author: 'Theodore Georgomanolis'
+inputs:
+  path:
+    description: 'Path to Prometheus operator rules'
+    required: false
+    default: './'
+  glob_pattern:
+    description: 'Rule file extension as glob pattern'
+    required: false
+    default: '*.y*ml'
+  exclude:
+    description: 'Regex to exclude files or folders from linting'
+    required: false
+    default: ''
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
+    - ${{ inputs.global_pattern }}
+    - ${{ inputs.exclude }}
+
+branding:
+  icon: 'terminal'
+  color: 'blue'
+...
