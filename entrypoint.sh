@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -o noglob
 
+POLINT='/go/bin/po-lint'
+
 error() {
   echo >&2 ":: [Error]: $*"
   exit 1
@@ -41,7 +43,7 @@ _check() {
         fi
       fi
       info "Checking file: $file"
-      if ! '/go/bin/po-lint' "$file"; then
+      if ! "$POLINT" "$file"; then
           ((errors+=1))
       fi
     done
@@ -52,7 +54,7 @@ lint() {
   local path="$1"
   local glob_pattern="${2:-*.y*ml}"
   local exclude="${3:-""}"
-  _command '/go/bin/po-lint' || error "'po-lint' linter not installed"
+  _command "$POLINT" || error "$POLINT linter not installed"
   local files
   files=$(_find "$path" "${glob_pattern}")
   info "Linting '${glob_pattern}' files in '${path}' directory"
