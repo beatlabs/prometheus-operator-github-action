@@ -1,4 +1,4 @@
-name: Shellcheck
+name: Linting
 on:
   pull_request:
     paths:
