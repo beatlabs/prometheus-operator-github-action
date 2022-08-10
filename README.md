@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: taxibeat/prometheus-operator-github-action@v1
+      - uses: beatlabs/prometheus-operator-github-action@v1
         with:
           path: './rules'
           exclude: '.*test.*'
