@@ -1,5 +1,7 @@
 # Prometheus Operator GitHub Action
 
+![Linting](https://github.com/beatlabs/prometheus-operator-github-action/workflows/Linting/badge.svg)
+
 ## Introduction
 This simple GitHub Action allows to run [po-lint](https://github.com/prometheus-operator/prometheus-operator/blob/main/Documentation/user-guides/linting.md) on kubernetes [prometheus operator](https://github.com/prometheus-operator/prometheus-operator) CRDs.
 
