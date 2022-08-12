@@ -1,0 +1,12 @@
+name: Linting
+on:
+  pull_request:
+    paths-ignore:
+      - '**.sh'
+      - 'Dockerfile'
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - run: 'echo "No build required"'
