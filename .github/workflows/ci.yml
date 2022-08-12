@@ -3,11 +3,16 @@ on:
   pull_request:
     paths:
       - '**.sh'
+      - 'Dockerfile'
 
 jobs:
-  shellcheck:
+  checks:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@1.1.0
+      - name: Run Hadolint
+        uses: hadolint/hadolint-action@v2.1.0
+        with:
+          dockerfile: ./Dockerfile
