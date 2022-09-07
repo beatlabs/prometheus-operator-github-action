@@ -22,3 +22,11 @@ jobs:
           path: './crds'
           exclude: '.*test.*'
 ```
+
+## Inputs
+
+| Name                 | Description                                                                                                                             | Default            |
+|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------|--------------------|
+| `path`               | The path to the Dockerfile to be tested                                                                                                 | `./`               |
+| `glob_pattern`       | Rule file extension as glob pattern                                                                                                     | `*.y*ml`           |
+| `exclude`            | Regex to exclude files or folders from linting                                                                                          | <none>             |
