@@ -9,7 +9,7 @@ jobs:
   checks:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.1.0
       - name: Run ShellCheck
         uses: ludeeus/action-shellcheck@1.1.0
       - name: Run Hadolint
